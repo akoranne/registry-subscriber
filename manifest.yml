@@ -4,6 +4,6 @@ applications:
   memory: 1G
   instances: 1
   host: registry-subscriber
-  path: target/registry-subscriber-0.0.1-SNAPSHOT.jar
+  path: target/registry-subscriber-0.1.0-SNAPSHOT.jar
   services:
   - service-registry
