@@ -6,4 +6,4 @@ applications:
   host: registry-subscriber
   path: target/registry-subscriber-0.1.0-SNAPSHOT.jar
   services:
-  - service-registry
+  - eureka-service
