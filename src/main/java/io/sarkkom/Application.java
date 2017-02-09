@@ -1,6 +1,7 @@
 package io.sarkkom;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,9 +25,12 @@ class ServiceInstanceRestController {
 	@Autowired
 	private DiscoveryClient discoveryClient;
 
+	@Value("${vcap.services.eureka-service.credentials.uri:http://localhost}")
+	private String eurekaURL;
+
 	@RequestMapping("/")
 	public String identify() {
-		return "Registry Subscriber - Registers with eureka.  ";
+		return "Registry Subscriber - Registers with eureka. -  " + eurekaURL;
 	}
 
 	@RequestMapping("/id")
